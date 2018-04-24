@@ -12,4 +12,9 @@ class Client extends Model
     protected $primaryKey = "client_id";
     
     protected $fillable = ['client_id', 'fio', 'email', 'phone', 'status'];
+    
+    public function documents() {
+        return $this->hasMany('App\Document', 'client_id', 'client_id');
+    }
+    
 }
